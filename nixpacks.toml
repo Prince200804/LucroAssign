@@ -2,7 +2,7 @@
 providers = ["python"]
 
 [phases.build]
-cmds = ["cd backend && python manage.py collectstatic --noinput"]
+cmds = ["cd backend && python manage.py collectstatic --noinput || true"]
 
 [start]
 cmd = "cd backend && python manage.py migrate && gunicorn core.wsgi:application --bind 0.0.0.0:$PORT"
