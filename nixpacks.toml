@@ -1,8 +1,5 @@
-[phases.setup]
-nixPkgs = ["python311", "gcc"]
-
-[phases.install]
-cmds = ["cd backend && pip install -r requirements.txt"]
+# Let Nixpacks auto-detect Python from requirements.txt
+providers = ["python"]
 
 [phases.build]
 cmds = ["cd backend && python manage.py collectstatic --noinput"]
