@@ -154,10 +154,10 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 # Add Vercel frontend URL from environment variable
-FRONTEND_URL = os.environ.get('FRONTEND_URL', '')
+FRONTEND_URL = os.environ.get('FRONTEND_URL', '').rstrip('/')  # Remove trailing slash
 if FRONTEND_URL:
     CORS_ALLOWED_ORIGINS.append(FRONTEND_URL)
-    # Also add without trailing slash and with https
+    # Also add with https if not present
     if not FRONTEND_URL.startswith('https://'):
         CORS_ALLOWED_ORIGINS.append(f"https://{FRONTEND_URL}")
 
