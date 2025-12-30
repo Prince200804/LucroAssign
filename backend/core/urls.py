@@ -6,9 +6,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import JsonResponse
+
+def health_check(request):
+    """Health check endpoint for Railway deployment"""
+    return JsonResponse({'status': 'healthy', 'message': 'API is running'})
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/health/', health_check, name='health_check'),
     path('api/users/', include('users.urls')),
     path('api/products/', include('products.urls')),
     path('api/cart/', include('cart.urls')),
