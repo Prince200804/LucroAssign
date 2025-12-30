@@ -154,11 +154,37 @@ CORS_ALLOWED_ORIGINS = [
 FRONTEND_URL = os.environ.get('FRONTEND_URL', '')
 if FRONTEND_URL:
     CORS_ALLOWED_ORIGINS.append(FRONTEND_URL)
+    # Also add without trailing slash and with https
+    if not FRONTEND_URL.startswith('https://'):
+        CORS_ALLOWED_ORIGINS.append(f"https://{FRONTEND_URL}")
 
-# Allow all origins in production with credentials (or specify your Vercel domain)
+# Allow all origins in production (set CORS_ALLOW_ALL=True in Railway env vars)
 CORS_ALLOW_ALL_ORIGINS = os.environ.get('CORS_ALLOW_ALL', 'False').lower() in ('true', '1', 'yes')
 
 CORS_ALLOW_CREDENTIALS = True
+
+# Allow these headers
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
+# Allow these methods
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 # Session settings for anonymous tracking
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
