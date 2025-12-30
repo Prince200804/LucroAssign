@@ -148,6 +148,9 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5174',
     'http://127.0.0.1:5174',
     'http://localhost:3000',
+    # Production URLs
+    'https://lucro-assign.vercel.app',
+    'https://web-production-fc881.up.railway.app',
 ]
 
 # Add Vercel frontend URL from environment variable
