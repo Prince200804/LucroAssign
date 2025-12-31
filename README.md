@@ -1,94 +1,98 @@
-# 🛒 E-Commerce Product Interaction Analytics Platform
+# 🛒 LucroAssign - E-Commerce Analytics Platform
 
-[![Django](https://img.shields.io/badge/Django-5.2.9-green.svg)](https://www.djangoproject.com/)
-[![Vue.js](https://img.shields.io/badge/Vue.js-3.x-brightgreen.svg)](https://vuejs.org/)
-[![Vuetify](https://img.shields.io/badge/Vuetify-3.x-blue.svg)](https://vuetifyjs.com/)
-[![Stripe](https://img.shields.io/badge/Stripe-Payment-blueviolet.svg)](https://stripe.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<p align="center">
+  <img src="https://img.shields.io/badge/Django-5.2.9-green?style=for-the-badge&logo=django" alt="Django">
+  <img src="https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=for-the-badge&logo=vue.js" alt="Vue.js">
+  <img src="https://img.shields.io/badge/Vuetify-3.x-1867C0?style=for-the-badge&logo=vuetify" alt="Vuetify">
+  <img src="https://img.shields.io/badge/Stripe-Payment-635BFF?style=for-the-badge&logo=stripe" alt="Stripe">
+  <img src="https://img.shields.io/badge/Railway-Deployed-0B0D0E?style=for-the-badge&logo=railway" alt="Railway">
+  <img src="https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel" alt="Vercel">
+</p>
 
-A full-stack e-commerce application with **advanced product interaction analytics**, **Stripe payment integration**, and **comprehensive admin reporting** built with Django REST Framework (backend) and Vue.js 3 with Vuetify (frontend).
-
----
-
-## 📑 Table of Contents
-
-- [Features](#-features)
-- [Tech Stack](#️-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Configuration](#️-configuration)
-- [API Endpoints](#-api-endpoints)
-- [Stripe Payment Testing](#-stripe-payment-testing)
-- [Admin Export Features](#-admin-export-features)
-- [Screenshots](#-screenshots)
-- [Deployment](#-deployment)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Author](#-author)
+A **full-stack e-commerce platform** with comprehensive analytics, Stripe payment integration, and admin dashboard. Built with Django REST Framework and Vue.js 3.
 
 ---
 
-## 🌟 Features
+## 🌐 Live Demo
+
+| Service | URL |
+|---------|-----|
+| 🖥️ **Frontend** | [https://lucro-assign.vercel.app](https://lucro-assign.vercel.app) |
+| ⚙️ **Backend API** | [https://web-production-fc881.up.railway.app/api/](https://web-production-fc881.up.railway.app/api/) |
+| 💚 **Health Check** | [https://web-production-fc881.up.railway.app/health/](https://web-production-fc881.up.railway.app/health/) |
+
+### 🔐 Demo Credentials
+
+| Role | Email | Password |
+|------|-------|----------|
+| **Admin** | `admin@example.com` | `admin123` |
+| **User** | `user@example.com` | `user123` |
+
+---
+
+## ✨ Features
 
 ### 🛍️ Customer Features
-| Feature | Description |
-|---------|-------------|
-| **Product Browsing** | Browse products by category with search and filter capabilities |
-| **Product Details** | View detailed product information with specifications |
-| **Shopping Cart** | Add/remove products, update quantities with real-time updates |
-| **Secure Checkout** | Complete purchases with **Stripe Payment Gateway** |
-| **Order Management** | View order history and track order status |
-| **User Authentication** | Register, login, and profile management with JWT tokens |
+- **Product Browsing** - Browse products with filtering by category, price range, and search
+- **Shopping Cart** - Add, update, remove items with real-time price calculation
+- **User Authentication** - Register, login, logout with JWT tokens
+- **Secure Checkout** - Stripe payment integration with credit card processing
+- **Order History** - View past orders with status tracking
+- **Anonymous Shopping** - Browse and add to cart without registration
 
-### 📊 Admin Features
-| Feature | Description |
-|---------|-------------|
-| **Analytics Dashboard** | Comprehensive overview with KPI cards and interactive charts |
-| **Product Analytics** | Detailed interaction tracking (views, cart additions, purchases) |
-| **Most Viewed Products** | Bar charts showing top viewed products |
-| **Most Purchased Products** | Sales distribution with doughnut charts |
-| **Viewed But Not Purchased** | Identify products with high views but low conversions |
-| **Cart Abandonment Analysis** | Track cart abandonment rates |
-| **Time-based Trends** | Line graphs showing engagement over time |
-| **Category Distribution** | Pie charts for category-wise analytics |
-| **Export Reports** | Export data as **Excel (.xlsx)** or **PDF** |
-| **Product Management** | Full CRUD operations for products |
-| **Order Management** | View, filter, and update order status |
+### 👨‍💼 Admin Features
+- **Admin Dashboard** - Comprehensive analytics with charts and statistics
+- **Product Management** - Full CRUD operations for products and categories
+- **Order Management** - View, update status, and manage all orders
+- **User Analytics** - Track user behavior, interactions, and patterns
+- **Data Export** - Download reports in Excel (XLSX) and PDF formats:
+  - 📊 Orders Export (Excel & PDF)
+  - 📈 Analytics Export (Excel & PDF)
+  - 📦 Products Export (Excel)
 
-### 💳 Payment Integration
-- **Stripe Payment Gateway**: Secure payment processing with PCI compliance
-- **Test Mode Support**: Easy testing with Stripe test cards
-- **Payment Intent API**: Modern Stripe integration with SCA compliance
-- **Real-time Payment Status**: Instant payment confirmation
+### 📊 Analytics Tracking
+- Product views and interactions
+- Add to cart events
+- Search queries
+- Daily statistics aggregation
+- User behavior patterns
+- Real-time dashboard updates
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Backend
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| Python | 3.10+ | Programming Language |
-| Django | 5.2.9 | Web Framework |
-| Django REST Framework | 3.15+ | RESTful API |
-| Simple JWT | 5.3+ | JWT Authentication |
-| **Stripe** | 14.0+ | Payment Processing |
-| SQLite/PostgreSQL | - | Database |
-| **openpyxl** | 3.1+ | Excel Generation |
-| **ReportLab** | 4.0+ | PDF Generation |
-| Pillow | 10.0+ | Image Processing |
+| Technology | Purpose |
+|------------|---------|
+| **Django 5.2.9** | Web framework |
+| **Django REST Framework** | REST API |
+| **Simple JWT** | JWT authentication |
+| **Stripe Python SDK** | Payment processing |
+| **SQLite** | Database (development) |
+| **Gunicorn** | WSGI HTTP server |
+| **WhiteNoise** | Static file serving |
+| **openpyxl** | Excel file generation |
+| **reportlab** | PDF generation |
+| **django-cors-headers** | CORS handling |
 
 ### Frontend
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| Vue.js | 3.x | JavaScript Framework |
-| Vuetify | 3.x | Material Design UI |
-| Pinia | 2.x | State Management |
-| Vue Router | 4.x | Client-side Routing |
-| Chart.js | 4.x | Data Visualization |
-| **Stripe.js** | Latest | Payment UI Elements |
-| Axios | 1.x | HTTP Client |
-| Vite | 5.x | Build Tool |
+| Technology | Purpose |
+|------------|---------|
+| **Vue.js 3** | JavaScript framework |
+| **Vuetify 3** | Material Design UI |
+| **Pinia** | State management |
+| **Vue Router** | Client-side routing |
+| **Axios** | HTTP client |
+| **Stripe.js** | Payment UI elements |
+| **Vite** | Build tool |
+
+### Deployment
+| Service | Purpose |
+|---------|---------|
+| **Railway** | Backend hosting |
+| **Vercel** | Frontend hosting |
+| **GitHub** | Version control |
 
 ---
 
@@ -96,354 +100,398 @@ A full-stack e-commerce application with **advanced product interaction analytic
 
 ```
 LucroAssign/
-├── 📂 backend/
-│   ├── 📂 core/               # Django settings & Stripe configuration
-│   │   ├── settings.py        # Main settings with Stripe keys
-│   │   ├── urls.py            # Root URL configuration
-│   │   └── wsgi.py
-│   ├── 📂 users/              # User authentication & profiles
-│   │   ├── models.py          # Custom User model
-│   │   ├── serializers.py     # User serializers
-│   │   └── views.py           # Auth views (register, login)
-│   ├── 📂 products/           # Product catalog management
-│   │   ├── models.py          # Product & Category models
-│   │   └── views.py           # Product CRUD views
-│   ├── 📂 cart/               # Shopping cart functionality
-│   │   ├── models.py          # Cart & CartItem models
-│   │   └── views.py           # Cart operations
-│   ├── 📂 orders/             # Order processing & Stripe payments
-│   │   ├── models.py          # Order model with Stripe fields
-│   │   ├── views.py           # Stripe PaymentIntent & Export views
-│   │   └── urls.py            # Order & export endpoints
-│   ├── 📂 analytics/          # Product interaction analytics
-│   │   ├── models.py          # Interaction tracking model
-│   │   ├── middleware.py      # Auto-tracking middleware
-│   │   └── views.py           # Analytics API views
-│   ├── requirements.txt       # Python dependencies
-│   └── manage.py
+├── backend/                    # Django Backend
+│   ├── core/                   # Project settings
+│   │   ├── settings.py         # Django configuration
+│   │   ├── urls.py             # Root URL routing
+│   │   └── wsgi.py             # WSGI application
+│   │
+│   ├── users/                  # User management
+│   │   ├── models.py           # User, AnonymousSession models
+│   │   ├── views.py            # Auth endpoints
+│   │   ├── serializers.py      # Data serialization
+│   │   └── urls.py             # User routes
+│   │
+│   ├── products/               # Product catalog
+│   │   ├── models.py           # Category, Product, ProductImage
+│   │   ├── views.py            # Product CRUD, filtering
+│   │   ├── serializers.py      # Product serialization
+│   │   └── urls.py             # Product routes
+│   │
+│   ├── cart/                   # Shopping cart
+│   │   ├── models.py           # Cart, CartItem models
+│   │   ├── views.py            # Cart operations
+│   │   ├── serializers.py      # Cart serialization
+│   │   └── urls.py             # Cart routes
+│   │
+│   ├── orders/                 # Order processing
+│   │   ├── models.py           # Order, OrderItem models
+│   │   ├── views.py            # Checkout, Stripe, exports
+│   │   ├── serializers.py      # Order serialization
+│   │   └── urls.py             # Order routes
+│   │
+│   ├── analytics/              # Analytics tracking
+│   │   ├── models.py           # ProductInteraction, DailyStats
+│   │   ├── views.py            # Dashboard, analytics endpoints
+│   │   ├── middleware.py       # Auto-tracking middleware
+│   │   ├── serializers.py      # Analytics serialization
+│   │   └── urls.py             # Analytics routes
+│   │
+│   ├── manage.py               # Django CLI
+│   ├── requirements.txt        # Python dependencies
+│   └── db.sqlite3              # SQLite database
 │
-├── 📂 frontend/
-│   ├── 📂 src/
-│   │   ├── 📂 components/     # Reusable Vue components
-│   │   ├── 📂 views/          # Page components
-│   │   │   ├── 📂 admin/      # Admin dashboard views
-│   │   │   │   ├── AnalyticsView.vue
-│   │   │   │   └── OrdersManageView.vue
-│   │   │   ├── CheckoutView.vue   # Stripe checkout page
-│   │   │   └── ...
-│   │   ├── 📂 stores/         # Pinia state stores
-│   │   ├── 📂 router/         # Vue Router configuration
-│   │   ├── 📂 services/       # API services (axios)
-│   │   └── 📂 plugins/        # Vuetify plugin
-│   ├── package.json
-│   ├── vite.config.js
-│   └── index.html
+├── frontend/                   # Vue.js Frontend
+│   ├── src/
+│   │   ├── views/              # Page components
+│   │   │   ├── HomeView.vue
+│   │   │   ├── ProductsView.vue
+│   │   │   ├── ProductDetailView.vue
+│   │   │   ├── CartView.vue
+│   │   │   ├── CheckoutView.vue
+│   │   │   ├── OrdersView.vue
+│   │   │   ├── LoginView.vue
+│   │   │   ├── RegisterView.vue
+│   │   │   └── admin/
+│   │   │       ├── DashboardView.vue
+│   │   │       ├── ProductsView.vue
+│   │   │       └── OrdersView.vue
+│   │   │
+│   │   ├── components/         # Reusable components
+│   │   │   ├── NavBar.vue
+│   │   │   └── FooterComponent.vue
+│   │   │
+│   │   ├── stores/             # Pinia state stores
+│   │   │   ├── auth.js         # Authentication state
+│   │   │   └── cart.js         # Cart state
+│   │   │
+│   │   ├── services/           # API services
+│   │   │   └── api.js          # Axios configuration
+│   │   │
+│   │   ├── router/             # Vue Router
+│   │   │   └── index.js        # Route definitions
+│   │   │
+│   │   ├── plugins/            # Vue plugins
+│   │   │   └── vuetify.js      # Vuetify configuration
+│   │   │
+│   │   ├── App.vue             # Root component
+│   │   └── main.js             # Application entry
+│   │
+│   ├── index.html              # HTML template
+│   ├── package.json            # Node dependencies
+│   ├── vite.config.js          # Vite configuration
+│   └── vercel.json             # Vercel deployment config
 │
-├── .gitignore
-└── README.md
+├── railway.toml                # Railway configuration
+├── nixpacks.toml               # Nixpacks build config
+├── Procfile                    # Process definition
+├── PROJECT_DOCUMENTATION.md    # Detailed code documentation
+└── README.md                   # This file
 ```
 
 ---
 
-## 🚀 Installation
+## 🚀 Getting Started
 
 ### Prerequisites
-- **Python** 3.10 or higher
-- **Node.js** 18 or higher
-- **npm** or **yarn**
-- **Git**
+- **Python 3.11+**
+- **Node.js 18+**
+- **npm or yarn**
+- **Stripe Account** (for payments)
 
-### 1️⃣ Clone the Repository
+### Backend Setup
 
-```bash
-git clone https://github.com/Prince200804/LucroAssign.git
-cd LucroAssign
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Prince200804/LucroAssign.git
+   cd LucroAssign/backend
+   ```
 
-### 2️⃣ Backend Setup
+2. **Create virtual environment**
+   ```bash
+   python -m venv venv
+   
+   # Windows
+   venv\Scripts\activate
+   
+   # macOS/Linux
+   source venv/bin/activate
+   ```
 
-```powershell
-# Navigate to backend directory
-cd backend
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-# Create virtual environment
-python -m venv venv
+4. **Set environment variables**
+   
+   Create a `.env` file in the `backend` folder:
+   ```env
+   SECRET_KEY=your-secret-key-here
+   DEBUG=True
+   STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
+   STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key
+   FRONTEND_URL=http://localhost:5173
+   ```
 
-# Activate virtual environment (Windows PowerShell)
-.\venv\Scripts\Activate.ps1
+5. **Run migrations**
+   ```bash
+   python manage.py migrate
+   ```
 
-# For Command Prompt use:
-# .\venv\Scripts\activate.bat
+6. **Load sample data**
+   ```bash
+   python manage.py seed_data
+   ```
 
-# For Linux/Mac use:
-# source venv/bin/activate
+7. **Start development server**
+   ```bash
+   python manage.py runserver
+   ```
+   
+   Backend will be available at: `http://localhost:8000`
 
-# Install Python dependencies
-pip install -r requirements.txt
+### Frontend Setup
 
-# Run database migrations
-python manage.py makemigrations
-python manage.py migrate
+1. **Navigate to frontend directory**
+   ```bash
+   cd ../frontend
+   ```
 
-# Create superuser (admin account)
-python manage.py createsuperuser
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Seed sample data (optional)
-python manage.py seed_data
+3. **Set environment variables**
+   
+   Create a `.env` file in the `frontend` folder:
+   ```env
+   VITE_API_URL=http://localhost:8000/api
+   VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key
+   ```
 
-# Start the Django development server
-python manage.py runserver
-```
-
-Backend will be available at: **http://localhost:8000**
-
-### 3️⃣ Frontend Setup
-
-```powershell
-# Open a new terminal
-cd frontend
-
-# Install Node.js dependencies
-npm install
-
-# Start the development server
-npm run dev
-```
-
-Frontend will be available at: **http://localhost:5173**
-
----
-
-## ⚙️ Configuration
-
-### Environment Variables
-
-Create a `.env` file in the `backend` directory:
-
-```env
-# Django Settings
-DEBUG=True
-SECRET_KEY=your-super-secret-key-here
-
-# Database (optional - defaults to SQLite)
-DATABASE_URL=sqlite:///db.sqlite3
-
-# Stripe Configuration (REQUIRED for payments)
-STRIPE_PUBLISHABLE_KEY=pk_test_your_publishable_key
-STRIPE_SECRET_KEY=sk_test_your_secret_key
-STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
-```
-
-### Getting Stripe API Keys
-
-1. Go to [Stripe Dashboard](https://dashboard.stripe.com/)
-2. Create an account or log in
-3. Navigate to **Developers** → **API Keys**
-4. Copy your **Publishable key** and **Secret key**
-5. For webhooks, go to **Developers** → **Webhooks**
+4. **Start development server**
+   ```bash
+   npm run dev
+   ```
+   
+   Frontend will be available at: `http://localhost:5173`
 
 ---
 
-## 🔑 API Endpoints
+## 🔌 API Endpoints
 
 ### Authentication
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/users/register/` | User registration |
-| POST | `/api/users/login/` | User login (returns JWT tokens) |
-| POST | `/api/users/token/refresh/` | Refresh access token |
-| GET | `/api/users/me/` | Get current user profile |
+| `POST` | `/api/users/register/` | Register new user |
+| `POST` | `/api/users/login/` | Login and get tokens |
+| `POST` | `/api/users/token/refresh/` | Refresh access token |
+| `GET` | `/api/users/profile/` | Get user profile |
+| `POST` | `/api/users/anonymous-session/` | Create anonymous session |
 
 ### Products
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/products/` | List all products |
-| GET | `/api/products/<slug>/` | Get product details |
-| GET | `/api/products/categories/` | List categories |
-| GET | `/api/products/categories/<slug>/` | Get category products |
+| `GET` | `/api/products/` | List all products |
+| `GET` | `/api/products/{id}/` | Get product details |
+| `GET` | `/api/products/categories/` | List all categories |
+| `POST` | `/api/products/admin/products/` | Create product (admin) |
+| `PUT` | `/api/products/admin/products/{id}/` | Update product (admin) |
+| `DELETE` | `/api/products/admin/products/{id}/` | Delete product (admin) |
 
 ### Cart
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/cart/` | Get user's cart |
-| POST | `/api/cart/add/` | Add item to cart |
-| PATCH | `/api/cart/items/<id>/` | Update cart item |
-| DELETE | `/api/cart/items/<id>/` | Remove cart item |
+| `GET` | `/api/cart/` | Get cart items |
+| `POST` | `/api/cart/add/` | Add item to cart |
+| `PUT` | `/api/cart/update/{id}/` | Update cart item quantity |
+| `DELETE` | `/api/cart/remove/{id}/` | Remove item from cart |
+| `DELETE` | `/api/cart/clear/` | Clear entire cart |
 
-### Orders & Payments
+### Orders
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/orders/` | List user's orders |
-| POST | `/api/orders/` | Create new order |
-| GET | `/api/orders/<id>/` | Get order details |
-| POST | `/api/orders/stripe/create-payment-intent/` | Create Stripe PaymentIntent |
+| `GET` | `/api/orders/` | List user orders |
+| `GET` | `/api/orders/{id}/` | Get order details |
+| `POST` | `/api/orders/create-payment-intent/` | Create Stripe PaymentIntent |
+| `POST` | `/api/orders/confirm/` | Confirm order after payment |
+| `GET` | `/api/orders/admin/orders/` | List all orders (admin) |
+| `PATCH` | `/api/orders/admin/orders/{id}/` | Update order status (admin) |
 
-### Admin Export Endpoints 📥
+### Analytics (Admin Only)
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/orders/admin/export/orders/excel/` | Export all orders to Excel |
-| GET | `/api/orders/admin/export/orders/pdf/` | Export all orders to PDF |
-| GET | `/api/orders/admin/export/analytics/excel/` | Export analytics to Excel |
-| GET | `/api/orders/admin/export/analytics/pdf/` | Export analytics to PDF |
-| GET | `/api/orders/admin/export/products/excel/` | Export products to Excel |
+| `GET` | `/api/analytics/dashboard/` | Get dashboard statistics |
+| `GET` | `/api/analytics/interactions/` | Get product interactions |
+| `GET` | `/api/analytics/daily-stats/` | Get daily statistics |
+| `POST` | `/api/analytics/track/` | Track user interaction |
 
-### Analytics (Admin only)
+### Export Endpoints (Admin Only)
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/analytics/overview/` | Dashboard overview |
-| GET | `/api/analytics/trends/` | Engagement trends |
-| GET | `/api/analytics/most-viewed/` | Most viewed products |
-| GET | `/api/analytics/most-purchased/` | Most purchased products |
-| GET | `/api/analytics/viewed-not-purchased/` | Products viewed but not purchased |
-| GET | `/api/analytics/cart-abandonment/` | Cart abandonment data |
-| GET | `/api/analytics/category-distribution/` | Category distribution |
+| `GET` | `/api/orders/admin/export/orders/excel/` | Download orders as Excel |
+| `GET` | `/api/orders/admin/export/orders/pdf/` | Download orders as PDF |
+| `GET` | `/api/analytics/export/excel/` | Download analytics as Excel |
+| `GET` | `/api/analytics/export/pdf/` | Download analytics as PDF |
+| `GET` | `/api/products/admin/export/excel/` | Download products as Excel |
+
+### Health Check
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/health/` | API health status |
 
 ---
 
-## 💳 Stripe Payment Testing
+## 💳 Stripe Integration
+
+The application uses **Stripe PaymentIntent API** for secure payment processing.
 
 ### Test Card Numbers
-
-Use these test card numbers for testing payments:
-
 | Card Number | Description |
 |-------------|-------------|
 | `4242 4242 4242 4242` | Successful payment |
-| `4000 0000 0000 3220` | 3D Secure authentication |
-| `4000 0000 0000 9995` | Declined payment |
+| `4000 0000 0000 0002` | Card declined |
+| `4000 0000 0000 9995` | Insufficient funds |
 
-**For all test cards:**
-- **Expiry Date**: Any future date (e.g., 12/34)
-- **CVC**: Any 3 digits (e.g., 123)
-- **ZIP**: Any 5 digits (e.g., 12345)
+**Expiry:** Any future date  
+**CVC:** Any 3 digits  
+**ZIP:** Any 5 digits
 
 ### Payment Flow
-
-1. User adds products to cart
+1. User adds items to cart
 2. User proceeds to checkout
-3. User enters shipping information
-4. Stripe Payment Element appears
-5. User enters card details
-6. Payment is processed via Stripe PaymentIntent API
-7. Order is created upon successful payment
+3. Frontend creates PaymentIntent via backend
+4. Stripe Elements collects card details
+5. Frontend confirms payment with Stripe
+6. Backend verifies payment and creates order
 
 ---
 
-## 📥 Admin Export Features
+## 🚢 Deployment
 
-### Available Export Formats
+### Backend (Railway)
 
-| Data Type | Excel (.xlsx) | PDF |
-|-----------|---------------|-----|
-| Orders | ✅ | ✅ |
-| Analytics | ✅ | ✅ |
-| Products | ✅ | - |
+1. **Create Railway account** at [railway.app](https://railway.app)
 
-### How to Export
+2. **Connect GitHub repository**
 
-1. Log in as an **Admin** user
-2. Navigate to the **Admin Dashboard**
-3. Go to **Orders** or **Analytics** section
-4. Click the **Export** dropdown button
-5. Select **Excel** or **PDF** format
-6. File will be downloaded automatically
+3. **Set environment variables** in Railway:
+   ```
+   SECRET_KEY=your-production-secret-key
+   DEBUG=False
+   STRIPE_SECRET_KEY=sk_live_or_sk_test_xxx
+   STRIPE_PUBLISHABLE_KEY=pk_live_or_pk_test_xxx
+   FRONTEND_URL=https://your-vercel-domain.vercel.app
+   ```
 
-### Export Contents
+4. **Configure build settings**:
+   - Root Directory: `/`
+   - Build Command: (handled by `nixpacks.toml`)
+   - Start Command: (handled by `railway.toml`)
 
-**Orders Export includes:**
-- Order ID, Date, Customer Info
-- Products, Quantities, Prices
-- Payment Status, Payment Method
-- Shipping Address
-- Total Amount
+5. **Deploy** - Railway will automatically build and deploy
 
-**Analytics Export includes:**
-- Total Views, Cart Additions, Purchases
-- Conversion Rates
-- Top Products
-- Category Distribution
-- Time-based Trends
+### Frontend (Vercel)
+
+1. **Create Vercel account** at [vercel.com](https://vercel.com)
+
+2. **Import GitHub repository**
+
+3. **Configure project**:
+   - Framework Preset: `Vite`
+   - Root Directory: `frontend`
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+
+4. **Set environment variables**:
+   ```
+   VITE_API_URL=https://your-railway-backend.up.railway.app/api
+   VITE_STRIPE_PUBLISHABLE_KEY=pk_live_or_pk_test_xxx
+   ```
+
+5. **Deploy** - Vercel will automatically build and deploy
 
 ---
 
-## 📸 Screenshots
+## 📊 Admin Dashboard
 
-### Customer Interface
-- **Home Page**: Product catalog with category filters
-- **Product Details**: Detailed product view with add to cart
-- **Shopping Cart**: Cart management with quantity updates
-- **Checkout**: Stripe payment integration
+Access the admin dashboard at `/admin/dashboard` after logging in with admin credentials.
 
-### Admin Dashboard
-- **Analytics Overview**: KPI cards with key metrics
-- **Charts**: Interactive Chart.js visualizations
-- **Order Management**: Order listing with status updates
-- **Export Options**: One-click export buttons
+### Dashboard Features
+- **Revenue Overview** - Total sales and order statistics
+- **Product Performance** - Most viewed and purchased products
+- **User Analytics** - Registration trends and user behavior
+- **Real-time Charts** - Interactive data visualization
+- **Quick Actions** - Manage products and orders
+
+### Export Options
+- **Orders Report** - Complete order history with customer details
+- **Analytics Report** - User interactions and behavior patterns
+- **Products Report** - Full product catalog with inventory
 
 ---
 
-## 🚀 Deployment
+## 🔐 Authentication Flow
 
-### Frontend Deployment (Vercel)
+The application uses **JWT (JSON Web Tokens)** for authentication:
 
-1. **Push to GitHub** (if not already done)
+1. **Registration** - User creates account with email/password
+2. **Login** - Server returns `access` and `refresh` tokens
+3. **API Calls** - Access token sent in `Authorization: Bearer <token>` header
+4. **Token Refresh** - When access token expires, use refresh token to get new access token
+5. **Logout** - Frontend clears stored tokens
 
-2. **Connect to Vercel:**
-   - Go to [vercel.com](https://vercel.com)
-   - Click "New Project"
-   - Import your GitHub repository
-   - Select the `frontend` folder as root directory
+### Token Configuration
+- **Access Token Lifetime:** 1 day
+- **Refresh Token Lifetime:** 7 days
 
-3. **Configure Build Settings:**
-   ```
-   Build Command: npm run build
-   Output Directory: dist
-   Install Command: npm install
-   ```
+---
 
-4. **Add Environment Variables:**
-   ```
-   VITE_API_URL=https://your-backend-url.com/api
-   VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_key
-   ```
+## 🧪 Sample Data
 
-### Backend Deployment Options
+The `seed_data` management command creates:
 
-**Option 1: Railway**
-- Connect GitHub repository
-- Add PostgreSQL database
-- Set environment variables
-- Deploy!
+- **Admin User:** `admin@example.com` / `admin123`
+- **Regular User:** `user@example.com` / `user123`
+- **Categories:** Electronics, Clothing, Books, Home & Kitchen, Sports
+- **Products:** 5 sample products with images and descriptions
+- **Sample Analytics:** Product interactions and daily statistics
 
-**Option 2: Render**
-- Create new Web Service
-- Connect GitHub repository
-- Set build command: `pip install -r requirements.txt`
-- Set start command: `gunicorn core.wsgi:application`
+Run seed data:
+```bash
+python manage.py seed_data
+```
 
-**Option 3: DigitalOcean App Platform**
-- Similar to Render setup
+---
 
-### Production Checklist
+## 📝 Environment Variables
 
-- [ ] Set `DEBUG=False` in Django settings
-- [ ] Configure proper `ALLOWED_HOSTS`
-- [ ] Set up PostgreSQL database
-- [ ] Configure Stripe production keys
-- [ ] Set up proper CORS origins
-- [ ] Enable HTTPS
-- [ ] Set up static file serving (WhiteNoise)
+### Backend (.env)
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `SECRET_KEY` | Django secret key | ✅ |
+| `DEBUG` | Debug mode (True/False) | ✅ |
+| `STRIPE_SECRET_KEY` | Stripe secret key | ✅ |
+| `STRIPE_PUBLISHABLE_KEY` | Stripe publishable key | ✅ |
+| `FRONTEND_URL` | Frontend URL for CORS | ✅ |
+| `DATABASE_URL` | Database connection string | ❌ |
+
+### Frontend (.env)
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `VITE_API_URL` | Backend API URL | ✅ |
+| `VITE_STRIPE_PUBLISHABLE_KEY` | Stripe publishable key | ✅ |
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
-
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
 ---
@@ -464,14 +512,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [Django Documentation](https://docs.djangoproject.com/)
-- [Vue.js Documentation](https://vuejs.org/)
-- [Vuetify Documentation](https://vuetifyjs.com/)
-- [Stripe Documentation](https://stripe.com/docs)
-- [Chart.js Documentation](https://www.chartjs.org/)
+- [Django](https://www.djangoproject.com/) - The web framework for perfectionists with deadlines
+- [Vue.js](https://vuejs.org/) - The Progressive JavaScript Framework
+- [Vuetify](https://vuetifyjs.com/) - Material Design Component Framework
+- [Stripe](https://stripe.com/) - Online payment processing
+- [Railway](https://railway.app/) - Infrastructure platform
+- [Vercel](https://vercel.com/) - Frontend cloud platform
 
 ---
 
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/Prince200804">Prince200804</a>
+  Made with ❤️ by Prince200804
 </p>
